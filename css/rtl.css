@@ -1,0 +1,107 @@
+/* ================= GENERAL ================== */
+
+#expuls {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+#expuls-content {
+    margin: 0 20px 40px 40px;
+}
+
+#expuls-nokey {
+    margin: 40px 20px 40px 40px;
+}
+
+.expuls-notice {
+    border-left: none !important;
+    border-right: 5px solid #07A081;
+}
+
+.expuls-notice.expuls-notice-danger {
+    border-right-color: #F44336;
+    border-left-color: transparent;
+}
+
+.expuls-notice.expuls-notice-warning {
+    border-right-color: #FF9800;
+    border-left-color: transparent;
+}
+
+/* ================= HEADER ================== */
+
+#expuls-header {
+    margin: 40px 20px 0 40px;
+}
+
+#expuls-menu a {
+    margin: 0 10px 0 0;
+}
+
+#expuls-menu a span.dashicons {
+    margin: 0 0 0 5px;
+}
+
+/* ================= SEARCH ================== */
+
+#expuls-video-orientation,
+#expuls-video-size,
+#expuls-photo-orientation,
+#expuls-photo-color {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+#expuls-content .expuls-search-box .expuls-form-field {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/* ================= GRID ================== */
+
+.expuls-info {
+    right: 48px;
+    left:auto;
+}
+
+.expuls-preview {
+    right: 10px;
+    left:auto;
+}
+
+.expuls-cancel {
+    left: 10px;
+    right:auto;
+}
+
+.expuls-btn.expuls-import {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.expuls-video-duration {
+    left: 5px;
+    right:auto;
+}
+
+/* ================= MEDIA QUERIES ================== */
+
+@media only screen and (max-width: 782px) {
+    #expuls-menu {
+        left:0;
+        right: auto;
+    }
+
+    #expuls-photo-color {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+
+    #expuls-content {
+        margin: 0 20px 40px 20px;
+    }
+
+    #expuls-header {
+        margin: 40px 20px 0 20px;
+    }
+}

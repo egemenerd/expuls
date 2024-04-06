@@ -1,0 +1,613 @@
+/* ---------------------- 
+Stylesheet Guide
+-------------------------
+
+GENERAL
+MOBILE MENU
+HEADER
+SEARCH
+GRID
+MEDIA QUERIES
+
+*/
+
+/* ================= GENERAL ================== */
+
+.fancybox__container {
+    z-index: 999999 !important;
+}
+
+.expuls-page {
+    display: none;
+}
+
+.expuls-page.active {
+    display: block;
+}
+
+#expuls-content {
+    margin: 0 40px 40px 20px;
+}
+
+#expuls-nokey {
+    margin: 40px 40px 40px 20px;
+}
+
+.expuls-notice {
+    border-left: 5px solid #07A081;
+    background: #fff;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.expuls-notice.expuls-notice-danger {
+    border-left-color: #F44336;
+}
+
+.expuls-notice.expuls-notice-warning {
+    border-left-color: #FF9800;
+}
+
+button.expuls-btn {
+    padding: 8px 15px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+    outline: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+button.expuls-btn:hover {
+    background: #fff;
+    color: #07A081;
+    border: 1px solid #07A081;
+}
+
+button.expuls-btn.expuls-lg-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@-webkit-keyframes expulsSpin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes expulsSpin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.expuls-loader-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.expuls-loader {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    -webkit-animation: expulsSpin 1s infinite linear;
+    animation: expulsSpin 1s infinite linear;
+    border: 6px solid #fff;
+    border-top-color: #07A081;
+}
+
+.fancybox__html5video {
+    outline: none !important;
+}
+
+/* ================= MOBILE MENU ================== */
+
+#expuls-mobile-btn {
+    display: none;
+    text-decoration: none;
+    color: #07A081;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#expuls-mobile-btn .dashicons,
+#expuls-mobile-btn .dashicons-before::before {
+    width: auto;
+    height: auto;
+    font-size: 26px;
+}
+
+/* ================= HEADER ================== */
+
+#expuls-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    margin: 40px 40px 0 20px;
+    padding: 20px;
+    z-index: 2;
+}
+
+#expuls-header .expuls-logo-wrap img {
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+#expuls-header .expuls-logo-wrap h1 {
+    font-size: 30px;
+    margin: 10px 0 5px 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    line-height: 1;
+}
+
+#expuls-header .expuls-logo-wrap p {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-style: italic;
+    color: #444;
+    line-height: 1.4
+}
+
+#expuls-menu-wrap {
+    display: flex;
+}
+
+#expuls-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#expuls-menu a {
+    margin: 0 0 0 10px;
+    padding: 8px 15px;
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    line-height: 1.2;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#expuls-menu a:hover {
+    color: #07A081;
+    border-color: #07A081;
+}
+
+#expuls-menu a.active {
+    background: #07A081;
+    color: #fff;
+    border-color: #07A081;
+}
+
+#expuls-menu a span.dashicons {
+    margin: 0 5px 0 0;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+}
+
+/* ================= SEARCH ================== */
+
+.expuls-search-wrap {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.expuls-search-wrap>div {
+    width: 50%;
+}
+
+#expuls-content {
+    transition: opacity 0.2s ease-in-out;
+}
+
+#expuls-videos-output.loading,
+#expuls-photos-output.loading {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#expuls-content select.expuls-select,
+#expuls-content .expuls-form-field {
+    box-shadow: none !important;
+    border-color: #ddd;
+    min-height: 35px;
+    line-height: 33px;
+    transition: all 0.2s ease-in-out;
+    outline: none !important;
+    max-width: none !important;
+}
+
+.expuls-form-field:disabled {
+    color: #a7aaad;
+    border-color: #dcdcde;
+    background-color: #f6f7f7;
+}
+
+.expuls-form-field:disabled::placeholder {
+    color: #a7aaad;
+}
+
+#expuls-content select.expuls-select:focus,
+#expuls-content .expuls-form-field:focus {
+    border-color: #07A081;
+}
+
+.expuls-search-filters {
+    display: flex;
+}
+
+#expuls-video-orientation,
+#expuls-video-size,
+#expuls-photo-orientation,
+#expuls-photo-color {
+    width: 50%;
+    margin-right: 10px
+}
+
+#expuls-content .expuls-search-box {
+    display: flex;
+}
+
+#expuls-content .expuls-search-box .expuls-form-field {
+    width: 100%;
+    margin-right: 10px;
+}
+
+#expuls-content .expuls-search-box .expuls-btn {
+    min-width: 60px;
+    background: #07A081;
+    color: #fff;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#expuls-content .expuls-search-box .expuls-btn:hover {
+    background: #078469;
+}
+
+/* ================= GRID ================== */
+
+.expuls-grid {
+    margin: 40px 0 20px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.expuls-masonry-item {
+    position: relative;
+    width: 20%;
+    width: calc((100% - 100px)/6);
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#expuls-videos-grid .expuls-masonry-item {
+    width: 25%;
+    width: calc((100% - 80px)/5);
+}
+
+.expuls-masonry-item img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.expuls-preview,
+.expuls-cancel,
+.expuls-info {
+    position: absolute;
+    top: 10px;
+    text-decoration: none;
+    background: #07A081;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    outline: none !important;
+    box-shadow: none !important;
+    z-index: 2;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+}
+
+.expuls-info {
+    left: 48px;
+}
+
+.expuls-preview {
+    left: 10px;
+}
+
+.expuls-cancel {
+    right: 10px;
+    background: #F44336;
+}
+
+.expuls-preview .dashicons,
+.expuls-preview .dashicons-before::before {
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.expuls-info .dashicons,
+.expuls-info .dashicons-before::before {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.expuls-cancel .dashicons,
+.expuls-cancel .dashicons-before::before {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.expuls-preview:focus,
+.expuls-preview:active,
+.expuls-preview:hover,
+.expuls-cancel:focus,
+.expuls-cancel:active,
+.expuls-cancel:hover,
+.expuls-info:focus,
+.expuls-info:active,
+.expuls-info:hover {
+    background: #078469;
+    color: #fff;
+}
+
+.expuls-cancel:focus,
+.expuls-cancel:active,
+.expuls-cancel:hover {
+    background: #e03f33;
+}
+
+.expuls-masonry-item.active .expuls-preview,
+.expuls-masonry-item.active .expuls-cancel,
+.expuls-masonry-item.active .expuls-info {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.expuls-btn.expuls-import {
+    border: none !important;
+    background: #07A081;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
+    font-size: 13px;
+    min-width: 60px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expuls-btn.expuls-import .dashicons,
+.expuls-btn.expuls-import .dashicons-before::before {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+}
+
+.expuls-btn.expuls-import .dashicons.dashicons-yes,
+.expuls-btn.expuls-import .dashicons-before::before {
+    font-size: 24px;
+}
+
+.expuls-btn.expuls-import:hover {
+    background: #078469;
+    color: #fff;
+}
+
+.expuls-item-info {
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
+    width: auto;
+    right: -1px;
+    transition: all 0.2s linear;
+    transform: translateY(100%);
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    padding: 10px;
+    z-index: 9;
+}
+
+.expuls-item-info select.expuls-select {
+    width: 100%;
+}
+
+.expuls-masonry-item.active .expuls-item-info {
+    transform: translateY(0);
+}
+
+.expuls-btn.expuls-import.importing {
+    pointer-events: none;
+}
+
+.expuls-btn-loader {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    -webkit-animation: expulsSpin 1s infinite linear;
+    animation: expulsSpin 1s infinite linear;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #fff;
+}
+
+.expuls-grid .expuls-notice {
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+}
+
+.expuls-video-duration {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #fff;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    line-height: 1;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#expuls-photos-grid-notice,
+#expuls-videos-grid-notice {
+    display: none;
+    margin-top: 40px;
+}
+
+/* ================= MEDIA QUERIES ================== */
+
+@media only screen and (max-width: 1600px) {
+    .expuls-masonry-item {
+        width: calc((100% - 80px)/5);
+    }
+
+    #expuls-videos-grid .expuls-masonry-item {
+        width: calc((100% - 60px)/4);
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    #expuls-videos-grid .expuls-masonry-item,
+    .expuls-masonry-item {
+        width: calc((100% - 40px)/3);
+    }
+}
+
+@media only screen and (max-width: 782px) {
+    #expuls-mobile-btn {
+        display: flex;
+    }
+
+    #expuls-menu-wrap {
+        display: none;
+        box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #expuls-menu {
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 100%;
+        box-shadow: 0 10px 20px 0 rgba(1, 1, 1, 0.2);
+        z-index: 9;
+        min-width:200px;
+    }
+
+    #expuls-menu a {
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        padding: 12px 15px;
+    }
+
+    #expuls-menu a:last-child {
+        border-bottom: none;
+    }
+
+    #expuls-menu a:hover {
+        border-color: #ddd;
+    }
+
+    .expuls-search-wrap {
+        flex-direction: column;
+    }
+
+    .expuls-search-wrap>div {
+        width: 100%;
+    }
+
+    #expuls-photo-color {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .expuls-search-wrap .expuls-search-box {
+        margin-top: 10px;
+    }
+
+    #expuls-videos-grid .expuls-masonry-item,
+    .expuls-masonry-item {
+        width: calc((100% - 20px)/2);
+    }
+
+    #expuls-content {
+        margin: 0 20px 40px 20px;
+    }
+    #expuls-header {
+        margin: 40px 20px 0 20px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    #expuls-videos-grid .expuls-masonry-item,
+    .expuls-masonry-item {
+        width: 100%;
+    }
+}
